@@ -1,0 +1,41 @@
+<p>
+    This is currently my largest project, and the one I hope will be most useful
+    to the world. Runequill is a writing aide which helps authors with several
+    aspects of the writing process. In doing so, it should fill the role of a
+    few different tools:
+</p>
+<li>
+    Microsoft Word: this is a big one to take down, but for the purposes of
+    writing the text of the novel itself, I believe I can make this a better
+    experience.
+</li>
+<li>
+    Markdown Files + Text Editors: many authors simply use markdown files for
+    the text of their story. The upside of this is that it's much less likely to
+    corrupt a markdown file versus a word doc. Nothing is worse than having your
+    life's work destroyed because Word decided to have a bad day. I aim to make
+    Runequill just as safe/reliable as basic markdown files.
+</li>
+<li>
+    Note platforms such as Obsidian or World Anvil: I want to make Runequill a
+    much more convenient place to store all of the supplemental information
+    about stories such as persons, places, and things. I don't want authors to
+    need to use external tools to organize this info.
+</li>
+<h2>Backend:</h2>
+<p>
+    Runequill is built predominantly on Rust. All of the data storage/retrieval
+    is done by Rust + a SQLite database.
+</p>
+<h2>Frontend:</h2>
+<p>
+    I opted to use Tauri for the frontend. This was for a few reasons: firstly I
+    was at least somewhat familiar with current webdev tools. I'm very
+    comfortable in Typescript, so it was easy for me to pick this up.
+    Additionally, the webdev scene is far more mature than any of the current
+    Rust GUI options. I opted to use Svelte to assist with the layout and
+    routing + I love Svelte components. There is of course a con to this: it's
+    very reliant on the platform running Runequill to have Webkit. Additionally
+    it won't quite be as snappy as a native Rust GUI, but I'm confident it will
+    still be substantially faster than an Electron frontend.
+</p>

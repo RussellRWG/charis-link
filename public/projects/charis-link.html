@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Charis-Link Home</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <nav class="top-nav">
+            <button class="nav-btn">Home</button
+            ><button class="nav-btn">Projects</button
+            ><button class="nav-btn">About Me</button>
+        </nav>
+        <main>
+            <aside></aside>
+            <p>
+                This is the site you're on now! Here's some info on how I built
+                it:
+            </p>
+            <h2>Backend:</h2>
+            <p>
+                This is a Go server using the standard library http package. It
+                is currently running as a file server. I figured this is a case
+                of keep it simple, stupid. Some background on why I chose Go:
+                Originally I wanted to build this site using SvelteKit. I set up
+                the project, ran sv to set up the barebones template, and it
+                installed a MASSIVE amount of packages. Honestly it's just
+                overkill for what I intend this site to be. On top of that,
+                having that many packages installed as dependencies just opens
+                up more security risks as well. I like knowing that all of the
+                code running this server is out of the standard Go library,
+                especially with all of the recent supply chain attacks on npm.
+            </p>
+            <h2>Frontend</h2>
+            <p>
+                This is about as simple as it can can get. I'm using good ole
+                HTML + CSS.
+            </p>
+            <h3>Hosting/Architecture</h3>
+            <p>
+                This is where it gets a bit more interesting. This site is
+                currently running on a Raspberry Pi 5 sitting on my desk. I'm
+                using a Cloudflared tunnel to redirect traffic from Cloudflare
+                directly to my Pi. The Cloudflare tunnel process running on the
+                Pi then forwards the packets to a Docker container which
+                contains the site itself.
+            </p>
+            <h2>Deployment</h2>
+            <p>
+                The code for this site is on Github here. For any changes, I
+                commit those changes to Github. Afterwards, a task fires off
+                which then builds a new Docker image of the site. Every time my
+                Raspberry Pi reboots, it will pull the most recent Docker image
+                of my site and start an instance of it.
+            </p>
+        </main>
+    </body>
+</html>
